@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="assets/estilo.css">
+    <title>Calculando IMC</title>
+</head>
+<body>
+    <!--Calculando Peso Ideal-->
+    <div class="container-calc">
+        <div class="layout-calc--area-pi">
+            <div class="layout-calc1">
+                <div class="title">
+                    <h2>Calculando Peso Ideal</h2>
+                </div>
+                <div class="picalc title">Seu peso ideal é -----</div>
+            </div>
+            <div class="layout-calc2">
+                <div class="container-calc2">
+                    <div class="input-area">
+                        <div class="input"> 
+                            <div class="select pi-input-select">
+                                <select name="genero" class="pi-input-select1" id="genero">
+                                    <option value="" >Selecione o sexo</option>
+                                    <option value="masculino">Masculino</option>
+                                    <option value="feminino">Feminino</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="input"> 
+                            <input type="text" class="padrao-pi" id="altura-pi-calc" name="height" placeholder="Altura (170cm)" autocomplete="off" />
+                        </div>
+                    </div>
+                    <div class="button-area">
+                        <div class="button-dig--linha">
+                            <div class="button-dig" onclick="clicou('7')">7</div>
+                            <div class="button-dig" onclick="clicou('8')">8</div>
+                            <div class="button-dig" onclick="clicou('9')">9</div>
+                        </div>
+                        <div class="button-dig--linha">
+                            <div class="button-dig" onclick="clicou('6')">6</div>
+                            <div class="button-dig" onclick="clicou('5')">5</div>
+                            <div class="button-dig" onclick="clicou('4')">4</div>
+                        </div>
+                        <div class="button-dig--linha">
+                            <div class="button-dig" onclick="clicou('3')">3</div>
+                            <div class="button-dig" onclick="clicou('2')">2</div>
+                            <div class="button-dig" onclick="clicou('1')">1</div>
+                        </div>
+                        <div class="button-dig--linha">
+                            <div class="button-dig" onclick="clicou('0')">0</div>
+                            <div class="button-dig" id="vaziopi"></div>
+                            <div class="button-dig" onclick="clicou('.')">.</div>
+                        </div>
+                    </div>
+                    <div class="button-calc">
+                        <input type="button" id="btn-pi" class="button-calc-button" value="=" onclick="picalc()"/>
+                    </div>
+                    <div class="clear">
+                        <input type="button" class="clear-button" value="C" onclick="limparpi()"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Calculando IMC-->
+        <div class="layout-calc--area-imc">
+            <div class="layout-calc1 imc-1">
+                <div class="title imc-title">
+                    <h2>Calculando IMC</h2>
+                </div>
+                <div class="imc-title-res">Seu IMC é -----</div>
+            </div>
+            <div class="layout-calc2 imc-calc2">
+                <div class="container-calc2 imc-calc2">
+                    <div class="input-area-imc">
+                        <div class="input"> 
+                            <input type="text" class="padrao-imc imc-calc3" id="weight" name="weight" onclick="selecoa(id)" placeholder="Peso" autocomplete="off" />
+                        </div>
+                        <div class="input"> 
+                            <input type="text" class="padrao-imc imc-calc3" id="height" name="height"  onclick="selecoa(id)" placeholder="Altura (1.70m)"  autocomplete="off" />
+                        </div>
+                    </div>
+                    <div class="button-area">
+                        <div class="button-dig--linha imc-calc2">
+                            <div class="button-dig imc imc-calc2" onclick="clicouimc('7')">7</div>
+                            <div class="button-dig imc imc-calc2" onclick="clicouimc('8')">8</div>
+                            <div class="button-dig imc imc-calc2" onclick="clicouimc('9')">9</div>
+                        </div>
+                        <div class="button-dig--linha imc-calc2">
+                            <div class="button-dig imc imc-calc2" onclick="clicouimc('6')">6</div>
+                            <div class="button-dig imc imc-calc2" onclick="clicouimc('5')">5</div>
+                            <div class="button-dig imc imc-calc2" onclick="clicouimc('4')">4</div>
+                        </div>
+                        <div class="button-dig--linha imc-calc2">
+                            <div class="button-dig imc imc-calc2" onclick="clicouimc('3')">3</div>
+                            <div class="button-dig imc imc-calc2" onclick="clicouimc('2')">2</div>
+                            <div class="button-dig imc imc-calc2" onclick="clicouimc('1')">1</div>
+                        </div>
+                        <div class="button-dig--linha imc-calc2">
+                            <div class="button-dig imc imc-calc2" onclick="clicouimc('0')">0</div>
+                            <div class="button-dig imc imc-calc2" id="vazioimc"></div>
+                            <div class="button-dig imc imc-calc2" onclick="clicouimc('.')">.</div>
+                        </div>
+                    </div>
+                    <div class="button-calc imc-calc4">
+                        <input type="button" id="btn-imc" class="button-calc-button imc-calc4" value="=" onclick="imc()"/>
+                    </div>
+                    <div class="clear imc-calc3">
+                        <input type="button" class="clear-button imc-calc3" value="C" onclick="limparimc()"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Calculando TMB-->
+        <div class="layout-calc--area-tmb">
+            <div class="layout-calc1 tmb3">
+                <div class="title tmb1">
+                    <h2>Calculando TMB</h2>
+                </div>
+                <div class="tmb-title-res">Sua TMB é -----</div>
+            </div>
+            <div class="layout-calc2 tmb2">
+                <div class="container-calc2 tmb2">
+                    <div class="input-area-tmb">
+                        <div class="input tmb5 tmb-input-select"> 
+                            <div class="select-tmb tmb-input-select1">
+                                <select name="genero" class="genero padrao-tmb tmb1" id="sexo">
+                                    <option value="">Selecione o sexo</option>
+                                    <option value="masculino">Masculino</option>
+                                    <option value="feminino">Feminino</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="input tmb-input"> 
+                            <input type="text" class="padrao-tmb" id="peso-tmb-calc" name="weight" onclick="selecoatmb(id)" placeholder="Peso" autocomplete="off" /> 
+                        </div>
+                        <div class="input tmb-input"> 
+                            <input type="text" class="padrao-tmb" id="idade-tmb-calc" name="age" onclick="selecoatmb(id)" placeholder="Idade" autocomplete="off" /> 
+                        </div>
+                        <div class="input tmb-input"> 
+                            <input type="text" class="padrao-tmb" id="altura-tmb-calc" name="height" onclick="selecoatmb(id)" placeholder="Altura (170)" autocomplete="off" /> 
+                        </div>
+                    </div>
+                    <div class="button-area tmb2">
+                        <div class="button-dig--linha">
+                            <div class="button-dig tmb tmb2" onclick="clicoutmb('7')">7</div>
+                            <div class="button-dig tmb tmb2" onclick="clicoutmb('8')">8</div>
+                            <div class="button-dig tmb tmb2" onclick="clicoutmb('9')">9</div>
+                        </div>
+                        <div class="button-dig--linha">
+                            <div class="button-dig tmb tmb2" onclick="clicoutmb('6')">6</div>
+                            <div class="button-dig tmb tmb2" onclick="clicoutmb('5')">5</div>
+                            <div class="button-dig tmb tmb2" onclick="clicoutmb('4')">4</div>
+                        </div>
+                        <div class="button-dig--linha">
+                            <div class="button-dig tmb tmb2" onclick="clicoutmb('3')">3</div>
+                            <div class="button-dig tmb tmb2" onclick="clicoutmb('2')">2</div>
+                            <div class="button-dig tmb tmb2" onclick="clicoutmb('1')">1</div>
+                        </div>
+                        <div class="button-dig--linha">
+                            <div class="button-dig tmb tmb2" onclick="clicoutmb('0')">0</div>
+                            <div class="button-dig tmb tmb2" id="vaziotmb"></div>
+                            <div class="button-dig tmb tmb2" onclick="clicoutmb('.')">.</div>
+                        </div>
+                    </div>
+                    <div class="button-calc tmb4">
+                        <input type="button" id="btn-tmb" class="button-calc-button tmb4" value="=" onclick="tmb()"/>
+                    </div>
+                    <div class="clear tmb5">
+                        <input type="button" class="clear-button tmb5" value="C" onclick="limpartmb()"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
